@@ -1,0 +1,47 @@
+<html>
+    <body>
+
+            <input type="number" id="seatno" placeholder="SeatNumber">
+            <input type="text" id="class" placeholder="Classtype"> 
+            <button onclick="CHECKSEAT()">Enter</button>
+            <h1 id="res"></h1>
+            <script>
+                function CHECKSEAT(){
+                    let a=document.getElementById("seatno").value;
+                    let b= document.getElementById("class").value;
+                    if(b=="3AC"){
+                        if(a<=0 ||a>80){
+                            document.getElementById("res").textContent="Invalid seatno";
+                        }
+                    
+                        else if(a%8==7){
+                            document.getElementById("res").textContent="side lower";
+                        }else if(a%8==1 || a%8==4){
+                            document.getElementById("res").textContent="Lower";
+                        }else if(a%8==2|| a%8==5){
+                            document.getElementById("res").textContent="Middle";
+                        }else if(a%8==3|| a%8==6){
+                            document.getElementById("res").textContent="Upper";
+                        }else{
+                            document.getElementById("res").textContent="Side Upper";
+                        }
+                }
+                    else{
+                        if(a<=0 ||a>80){
+                            document.getElementById("res").textContent="Invalid seatno";
+                        }
+                        else if(a%6==5){
+                            document.getElementById("res").textContent="2 side lower";
+                        }else if(a%6==1 || a%6==3){
+                            document.getElementById("res").textContent="2 Lower";
+                        }else if(a%6==2|| a%6==4){
+                            document.getElementById("res").textContent="2 upper";
+                        
+                        }else{
+                            document.getElementById("res").textContent="2 Side Upper";
+                        }
+                    }
+                }
+            </script>
+    </body>
+</html>
